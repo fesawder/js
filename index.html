@@ -21,9 +21,13 @@
     </div>
 </body>
 <script>
-    $.get('https://fesawder.github.io/js/style.css', function (data) {
-        alert(data);
-    });
+    fetch('testFile.json')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+        });
 </script>
 
 </html>
