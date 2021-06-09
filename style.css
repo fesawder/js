@@ -1,0 +1,48 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 16px);
+    padding: 8px;
+}
+
+.wrapper>div {
+    margin: 0 0 8px 0;
+}
+
+.wrapper>div:last-child {
+    margin: 0;
+}
+
+.void {
+    background: #484848;
+    border-radius: 5px;
+    flex: 1 0 auto;
+}
+
+.gradient {
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
