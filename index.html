@@ -17,17 +17,14 @@
             <h1>JS Тестилка</h1>
         </div>
         <div class="void">
+            <pre></pre>
         </div>
     </div>
 </body>
 <script>
-    fetch('https://fesawder.github.io/js/style.css')
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-        });
+    $.get('https://fesawder.github.io/js/script.js', function (data) {
+        $('.void pre').html(`${data}`);
+    });
 </script>
 
 </html>

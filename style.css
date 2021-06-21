@@ -22,7 +22,13 @@ html, body {
 .void {
     background: #484848;
     border-radius: 5px;
+    padding: 0 15px;
     flex: 1 0 auto;
+}
+
+.void pre {
+    color: #f4f4ff;
+    font-size: 1.2em;
 }
 
 .gradient {

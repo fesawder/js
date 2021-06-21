@@ -1,21 +1,20 @@
-function mutation(arr) {
-    arr = arr.map(elem => elem.toLowerCase());
-    let res;
-    arr.map(function(elem1) {
-        console.log(elem1);
+function whatIsInAName(collection, source) {
+  var arr = [];
+  // Only change code below this line
+  let srcKeys = Object.keys(source);
+  arr = collection.reduce((accum, curent) => {
+    return srcKeys.map((el, i) => {
+      return source[srcKeys[i]] !== el[srcKeys[i]] ? accum : accum.concat(curent);
     });
-    for (let i = 0; i < arr[1].length; i++) {
-        res = false;
-        for (let j = 0; j < arr[0].length; j++) {
-            if (arr[1][i] == arr[0][j]) {
-                res = true;
-            }
-        }
-        if (res === false) {
-            return false;
-        }
+    for (let i = 0; i < srcKeys.length; i++) {
+      if (source[srcKeys[i]] !== curent[srcKeys[i]]) {
+        return accum;
+      }
     }
-    return true;
+    return accum.concat(curent);
+  }, []);
+  // Only change code above this line
+  return arr;
 }
 
-mutation(["hello", "Hello"]);
+console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 }));
